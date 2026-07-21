@@ -1,6 +1,6 @@
 # Domain model
 
-Status: Phase 1 identity and deck-manifest schema implemented
+Status: Phase 2 spread and manual-reading schema implemented
 
 ## Design principles
 
@@ -82,20 +82,26 @@ Placement
 - optional notes
 ```
 
-Fixed spreads require exactly one placement for every declared position.
-Freeform readings snapshot their ordered positions so later edits to a saved
-spread template cannot rewrite historical meaning. One-card and three-card
-spreads are metadata-only built-ins with original wording; the three-card
-position labels should be selected explicitly by the caller rather than
-assuming a universal past/present/future meaning.
+Layout hints are finite, nonsemantic coordinates. All spread definitions contain
+at least one position and reject duplicate position IDs. The original one-card
+built-in uses the neutral label `Card`; the three-card constructor requires the
+caller to supply all three labels and meanings rather than assuming a universal
+past/present/future interpretation.
+
+Fixed readings require exactly one placement for every declared position.
+Freeform readings may use an ordered subset. Every placement must reference an
+enabled physical deck card and a declared spread position, and its snapshotted
+identity, printed title, and position label must match. A physical deck-card ID
+and position ID may each appear only once. Draw order is the contiguous,
+one-based range from 1 through the placement count.
 
 ## Reading document
 
 ```text
 TarotReading
-- reading ID and artifact schema version
+- reading ID and reading schema version
 - optional opaque subject/session references supplied by the caller
-- deck-manifest snapshot or content-addressed manifest reference
+- complete deck-manifest snapshot
 - spread-definition snapshot
 - optional question or intention
 - optional background/context
@@ -111,10 +117,15 @@ Snapshots preserve what the reader actually saw: printed titles, position
 labels, manifest revision, and enabled deck. References alone are insufficient
 because a mutable deck or spread template could otherwise change history.
 
-Follow-ups should be append-oriented records with their own IDs and timestamps,
-not one lossy text field. The artifact layer can canonicalize the complete
-document and compute a `sha256:` content ID. IDs and timestamps are caller
-inputs or provider outputs, never synthesized during deserialization.
+Follow-ups are append-oriented annotation or outcome records with their own IDs
+and timestamps, not one lossy text field. They must be unique, ordered, and fall
+within the reading's created/modified timeline. Reading timestamps normalize to
+UTC but are never synthesized during deserialization. Revisions revalidate all
+placements and cannot move the modified timestamp backward.
+
+Reading schema v1 uses strict JSON and rejects unknown fields throughout the
+nested deck, spread, placement, provenance, and follow-up records. Stable
+reading content IDs are deferred to the artifact checkpoint.
 
 ## Draw provenance
 
@@ -129,6 +140,10 @@ DrawProvenance
 - reversal policy snapshot
 - optional seed commitment or encrypted-seed reference
 ```
+
+Phase 2 implements strict manual provenance with a caller-supplied
+`recorded_at` timestamp. The software-shuffle variant and its additional fields
+are reserved for Phase 3.
 
 The normal production API obtains entropy from the operating system and runs
 Fisher-Yates across the exact enabled card list. Index sampling must use

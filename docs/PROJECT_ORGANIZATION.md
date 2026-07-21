@@ -1,6 +1,6 @@
 # Project organization
 
-Status: Phase 1 identities and deck manifests complete
+Status: Phase 2 spreads and manual readings complete
 Last reviewed: 2026-07-21
 
 ## Mission
@@ -101,3 +101,18 @@ encrypted journal.
 - The complete manifest content ID covers all serialized metadata. A separate
   draw-manifest ID covers only the ordered enabled population, its canonical
   mappings, the manifest ID, and the reversal rate.
+
+## Phase 2 decisions
+
+- Reading schema v1 embeds complete deck and spread snapshots so later template
+  edits cannot rewrite the historical reading.
+- Fixed readings place every declared position exactly once. Freeform readings
+  may use an ordered subset of their explicitly declared positions.
+- Placements use one-based contiguous draw order and snapshot the position
+  label, canonical identity, deck-card ID, and printed title.
+- Manual readings accept upright, reversed, and unspecified orientation. A
+  manual provenance timestamp records when the physical layout was entered.
+- Reading IDs and timestamps are caller-supplied. Optional subject and session
+  references remain opaque strings owned by the calling application.
+- Reopened readings can revise placements and text or append timestamped
+  annotations and outcomes without bypassing snapshot or timeline validation.

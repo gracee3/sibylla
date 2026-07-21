@@ -21,10 +21,10 @@ See [project organization](docs/PROJECT_ORGANIZATION.md), the
 
 ## Status
 
-Phase 1 identities and deck manifests. `sibylla-core` provides the conventional
-78-card taxonomy, extensible identities, strict artwork-free manifest JSON, and
-versioned content hashes. Spread, reading, and shuffle schemas are not yet
-stable.
+Phase 2 spreads and manual readings. `sibylla-core` provides the conventional
+78-card taxonomy, extensible identities, artwork-free deck manifests, fixed and
+freeform spreads, validated manual placements, portable reading snapshots, and
+append-oriented follow-ups. Secure software shuffling remains the next phase.
 
 ## License
 

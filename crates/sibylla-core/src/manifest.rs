@@ -4,7 +4,10 @@ use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use sha2::{Digest, Sha256};
 use thiserror::Error;
 
-use crate::{CardIdentity, StableId, ValidationError};
+use crate::{
+    CardIdentity, StableId, ValidationError,
+    validation::{validate_optional_text, validate_text},
+};
 
 pub const MANIFEST_SCHEMA_VERSION: u32 = 1;
 pub const DRAW_MANIFEST_SCHEMA_VERSION: u32 = 1;
@@ -510,21 +513,6 @@ struct DrawManifestRef<'a> {
 struct DrawCardRef<'a> {
     deck_card_id: &'a StableId,
     identity: &'a CardIdentity,
-}
-
-fn validate_text(field: &'static str, value: &str) -> Result<(), ValidationError> {
-    if value.trim().is_empty() {
-        Err(ValidationError::EmptyText { field })
-    } else {
-        Ok(())
-    }
-}
-
-fn validate_optional_text(field: &'static str, value: Option<&str>) -> Result<(), ValidationError> {
-    if let Some(value) = value {
-        validate_text(field, value)?;
-    }
-    Ok(())
 }
 
 fn sha256_id(bytes: &[u8]) -> Result<String, ManifestError> {

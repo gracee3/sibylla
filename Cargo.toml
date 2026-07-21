@@ -9,6 +9,7 @@ repository = "https://github.com/gracee3/sibylla"
 rust-version = "1.97"
 
 [workspace.dependencies]
+chrono = { version = "0.4.41", default-features = false, features = ["serde", "std"] }
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "=1.0.151"
 sha2 = "0.10.9"

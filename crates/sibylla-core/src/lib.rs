@@ -7,6 +7,10 @@ mod error;
 mod id;
 mod identity;
 mod manifest;
+mod reading;
+mod spread;
+mod time;
+mod validation;
 
 pub use error::ValidationError;
 pub use id::StableId;
@@ -15,3 +19,11 @@ pub use manifest::{
     Attribution, Correspondence, DRAW_MANIFEST_SCHEMA_VERSION, DeckCard, DeckManifest,
     MANIFEST_SCHEMA_VERSION, ManifestError, ReversalPolicy, RightsMetadata,
 };
+pub use reading::{
+    DrawProvenance, FollowUp, FollowUpKind, Orientation, Placement, READING_SCHEMA_VERSION,
+    ReadingError, TarotReading,
+};
+pub use spread::{
+    LayoutHint, SPREAD_SCHEMA_VERSION, SpreadDefinition, SpreadError, SpreadLayout, SpreadPosition,
+};
+pub use time::UtcInstant;

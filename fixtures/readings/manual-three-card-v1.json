@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "id": "phase_two_manual_reading",
+  "subject_ref": null,
+  "session_ref": null,
+  "deck": {
+    "schema_version": 1,
+    "id": "phase_two_fixture_deck",
+    "name": "Phase Two Fixture Deck",
+    "attribution": {
+      "author": "Sibylla contributors",
+      "artist": null,
+      "publisher": null
+    },
+    "tradition": "Original metadata-only test fixture",
+    "rights": {
+      "license": "AGPL-3.0-or-later",
+      "source": "https://github.com/gracee3/sibylla",
+      "notes": "Contains no artwork or guidebook text."
+    },
+    "reversal_rate_basis_points": 5000,
+    "cards": [
+      {
+        "id": "chariot",
+        "identity": {
+          "kind": "conventional",
+          "id": "chariot"
+        },
+        "printed_title": "The Chariot",
+        "printed_number": "VII",
+        "printed_suit": null,
+        "printed_rank": null,
+        "enabled": true,
+        "asset_id": null,
+        "correspondences": [],
+        "notes": null
+      },
+      {
+        "id": "two_of_cups",
+        "identity": {
+          "kind": "conventional",
+          "id": "two_of_cups"
+        },
+        "printed_title": "Two of Cups",
+        "printed_number": "2",
+        "printed_suit": "Cups",
+        "printed_rank": "Two",
+        "enabled": true,
+        "asset_id": null,
+        "correspondences": [],
+        "notes": null
+      },
+      {
+        "id": "strength",
+        "identity": {
+          "kind": "conventional",
+          "id": "strength"
+        },
+        "printed_title": "Strength",
+        "printed_number": "VIII",
+        "printed_suit": null,
+        "printed_rank": null,
+        "enabled": true,
+        "asset_id": null,
+        "correspondences": [],
+        "notes": null
+      }
+    ]
+  },
+  "spread": {
+    "schema_version": 1,
+    "id": "situation_tension_next_step",
+    "name": "Situation, Tension, Next Step",
+    "layout": "fixed",
+    "positions": [
+      {
+        "id": "situation",
+        "label": "Situation",
+        "meaning": "What is present now",
+        "layout_hint": {
+          "x": -1,
+          "y": 0
+        }
+      },
+      {
+        "id": "tension",
+        "label": "Tension",
+        "meaning": "What creates movement or resistance",
+        "layout_hint": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "id": "next_step",
+        "label": "Next Step",
+        "meaning": "What can be approached next",
+        "layout_hint": {
+          "x": 1,
+          "y": 0
+        }
+      }
+    ]
+  },
+  "question": "What deserves attention in this fictional example?",
+  "context": "An original metadata-only fixture used to validate manual reading recovery.",
+  "placements": [
+    {
+      "position_id": "situation",
+      "position_label": "Situation",
+      "card_identity": {
+        "kind": "conventional",
+        "id": "chariot"
+      },
+      "deck_card_id": "chariot",
+      "printed_title": "The Chariot",
+      "orientation": "upright",
+      "draw_order": 1,
+      "notes": null
+    },
+    {
+      "position_id": "tension",
+      "position_label": "Tension",
+      "card_identity": {
+        "kind": "conventional",
+        "id": "two_of_cups"
+      },
+      "deck_card_id": "two_of_cups",
+      "printed_title": "Two of Cups",
+      "orientation": "reversed",
+      "draw_order": 2,
+      "notes": "Read as an invitation to clarify expectations."
+    },
+    {
+      "position_id": "next_step",
+      "position_label": "Next Step",
+      "card_identity": {
+        "kind": "conventional",
+        "id": "strength"
+      },
+      "deck_card_id": "strength",
+      "printed_title": "Strength",
+      "orientation": "unspecified",
+      "draw_order": 3,
+      "notes": null
+    }
+  ],
+  "draw_provenance": {
+    "method": "manual",
+    "recorded_at": "2026-07-21T14:00:00Z"
+  },
+  "reader_notes": "All cards were entered manually from a physical layout.",
+  "interpretation": "Move deliberately, clarify the relationship, and meet the next step with steadiness.",
+  "follow_ups": [
+    {
+      "id": "first_outcome",
+      "kind": "outcome",
+      "content": "The fictional situation became clearer after expectations were written down.",
+      "created_at": "2026-07-22T14:00:00Z"
+    }
+  ],
+  "created_at": "2026-07-21T14:00:00Z",
+  "modified_at": "2026-07-22T14:00:00Z"
+}
