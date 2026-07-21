@@ -40,6 +40,8 @@ positions, printed labels, orientations, context, and interpretation intact.
 
 ## Phase 3: secure software draws
 
+Status: complete on 2026-07-21.
+
 - Add a separate `sibylla-shuffle` crate with operating-system entropy from
   `getrandom` or `OsRng` and a versioned unbiased Fisher-Yates implementation.
 - Shuffle the exact enabled population identified by the Phase 1 draw-manifest

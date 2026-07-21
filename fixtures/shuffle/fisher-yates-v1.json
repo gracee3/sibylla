@@ -1,0 +1,20 @@
+{
+  "algorithm": "fisher_yates",
+  "algorithm_version": 1,
+  "test_source": "sha256_counter_v1",
+  "seed_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+  "expected": [
+    {
+      "deck_card_id": "strength",
+      "orientation": "reversed"
+    },
+    {
+      "deck_card_id": "chariot",
+      "orientation": "upright"
+    },
+    {
+      "deck_card_id": "two_of_cups",
+      "orientation": "upright"
+    }
+  ]
+}

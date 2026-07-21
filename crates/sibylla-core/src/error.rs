@@ -57,4 +57,12 @@ pub enum ValidationError {
     FollowUpOrder,
     #[error("invalid RFC 3339 timestamp: {0}")]
     InvalidUtcInstant(String),
+    #[error("{field} must be a lowercase sha256: content ID")]
+    InvalidSha256Id { field: &'static str },
+    #[error("software shuffle draw-manifest ID does not match the reading deck snapshot")]
+    ProvenanceManifestMismatch,
+    #[error("software shuffle enabled-card count does not match the reading deck snapshot")]
+    ProvenanceCardCountMismatch,
+    #[error("software shuffle reversal policy does not match the reading deck snapshot")]
+    ProvenanceReversalMismatch,
 }

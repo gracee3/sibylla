@@ -177,7 +177,7 @@ fn reading_timeline_and_follow_up_order_are_validated() {
     assert_invalid(
         &value,
         ValidationError::InvalidTimestampOrder {
-            field: "draw_provenance.recorded_at",
+            field: "draw_provenance.timestamp",
         },
     );
 
@@ -248,4 +248,43 @@ fn caller_timestamps_are_normalized_to_utc() {
     let timestamp = UtcInstant::parse_rfc3339("2026-07-21T10:00:00-04:00").unwrap();
     assert_eq!(timestamp.to_rfc3339(), "2026-07-21T14:00:00Z");
     assert!(UtcInstant::parse_rfc3339("not-a-timestamp").is_err());
+}
+
+#[test]
+fn software_provenance_must_match_the_embedded_deck_snapshot() {
+    let mut value = fixture_value();
+    let deck =
+        sibylla_core::DeckManifest::from_json(&serde_json::to_string(&value["deck"]).unwrap())
+            .unwrap();
+    value["draw_provenance"] = serde_json::json!({
+        "method": "software_shuffle",
+        "algorithm": "fisher_yates",
+        "algorithm_version": 1,
+        "randomness_source": "operating_system",
+        "draw_manifest_id": deck.draw_manifest_id().unwrap(),
+        "enabled_card_count": 3,
+        "reversal_policy": 5000,
+        "shuffled_at": "2026-07-21T14:00:00Z",
+        "seed_commitment": null
+    });
+    let reading = parse_value(&value).unwrap();
+    assert!(matches!(
+        reading.draw_provenance(),
+        sibylla_core::DrawProvenance::SoftwareShuffle { .. }
+    ));
+
+    let mut wrong_id = value.clone();
+    wrong_id["draw_provenance"]["draw_manifest_id"] = format!("sha256:{}", "00".repeat(32)).into();
+    assert_invalid(&wrong_id, ValidationError::ProvenanceManifestMismatch);
+
+    let mut wrong_count = value.clone();
+    wrong_count["draw_provenance"]["enabled_card_count"] = 2.into();
+    assert_invalid(&wrong_count, ValidationError::ProvenanceCardCountMismatch);
+
+    let mut wrong_reversals = value;
+    wrong_reversals["draw_provenance"]["reversal_policy"] = 0.into();
+    assert_invalid(
+        &wrong_reversals,
+        ValidationError::ProvenanceReversalMismatch,
+    );
 }

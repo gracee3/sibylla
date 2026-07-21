@@ -1,6 +1,6 @@
 # Domain model
 
-Status: Phase 2 spread and manual-reading schema implemented
+Status: Phase 3 secure software-shuffle contract implemented
 
 ## Design principles
 
@@ -141,20 +141,24 @@ DrawProvenance
 - optional seed commitment or encrypted-seed reference
 ```
 
-Phase 2 implements strict manual provenance with a caller-supplied
-`recorded_at` timestamp. The software-shuffle variant and its additional fields
-are reserved for Phase 3.
+Manual provenance carries a caller-supplied `recorded_at` timestamp. Software
+provenance carries the versioned algorithm, randomness-source category,
+draw-manifest ID, enabled-card count, reversal-policy snapshot, shuffle
+timestamp, and optional seed commitment. A reading rejects software provenance
+whose population ID, count, or reversal policy differs from its deck snapshot.
 
 The normal production API obtains entropy from the operating system and runs
-Fisher-Yates across the exact enabled card list. Index sampling must use
-rejection sampling or a vetted unbiased API; `% range` is prohibited when it
-introduces modulo bias. Orientation is sampled independently according to a
-validated policy, and disabled reversals consume no semantic reversal result.
+versioned Fisher-Yates across the exact enabled card list. Algorithm v1 reads
+little-endian `u64` samples and rejects the incomplete high tail before reducing
+into the requested range. Orientation is sampled independently according to the
+validated basis-point policy. Zero-percent reversals always produce upright;
+100-percent reversals always produce reversed; software draws never produce
+unspecified orientation.
 
-Raw seeds are sensitive and are not stored by default. A commitment can support
-later audit without revealing the seed; encrypted seed storage belongs to the
-application vault. A deterministic injected RNG is public enough for tests and
-replays but is never the default constructor.
+Raw seeds are sensitive and are not stored by default. A SHA-256 commitment can
+support later audit without revealing the seed; encrypted seed storage belongs
+to the application vault. A deterministic injected source is available for
+tests and explicit replays but is never the default constructor.
 
 ## Required invariant tests
 

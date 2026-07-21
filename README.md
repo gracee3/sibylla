@@ -21,10 +21,12 @@ See [project organization](docs/PROJECT_ORGANIZATION.md), the
 
 ## Status
 
-Phase 2 spreads and manual readings. `sibylla-core` provides the conventional
-78-card taxonomy, extensible identities, artwork-free deck manifests, fixed and
-freeform spreads, validated manual placements, portable reading snapshots, and
-append-oriented follow-ups. Secure software shuffling remains the next phase.
+Phase 3 secure software draws. `sibylla-core` provides identities, manifests,
+spreads, manual readings, and typed shuffle provenance. `sibylla-shuffle`
+provides versioned unbiased Fisher-Yates, operating-system entropy by default,
+independent reversals, deterministic test injection, and seed commitments.
+
+See the frozen [shuffle v1 contract](docs/SHUFFLE.md).
 
 ## License
 

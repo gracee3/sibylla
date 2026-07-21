@@ -4,6 +4,7 @@
 //! no database, encryption, UI, astrology, image-recognition, or AI provider.
 
 mod error;
+mod hash;
 mod id;
 mod identity;
 mod manifest;
@@ -13,6 +14,7 @@ mod time;
 mod validation;
 
 pub use error::ValidationError;
+pub use hash::Sha256Id;
 pub use id::StableId;
 pub use identity::{Arcana, CardIdentity, ConventionalCard, MajorArcana, MinorRank, MinorSuit};
 pub use manifest::{
@@ -21,7 +23,7 @@ pub use manifest::{
 };
 pub use reading::{
     DrawProvenance, FollowUp, FollowUpKind, Orientation, Placement, READING_SCHEMA_VERSION,
-    ReadingError, TarotReading,
+    RandomnessSource, ReadingError, TarotReading,
 };
 pub use spread::{
     LayoutHint, SPREAD_SCHEMA_VERSION, SpreadDefinition, SpreadError, SpreadLayout, SpreadPosition,

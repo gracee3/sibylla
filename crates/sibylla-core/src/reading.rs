@@ -1,11 +1,11 @@
-use std::collections::BTreeSet;
+use std::{collections::BTreeSet, num::NonZeroU32};
 
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 use thiserror::Error;
 
 use crate::{
-    CardIdentity, DeckManifest, SpreadDefinition, SpreadLayout, StableId, UtcInstant,
-    ValidationError,
+    CardIdentity, DeckManifest, ReversalPolicy, Sha256Id, SpreadDefinition, SpreadLayout, StableId,
+    UtcInstant, ValidationError,
     validation::{validate_optional_text, validate_text},
 };
 
@@ -20,15 +20,35 @@ pub enum Orientation {
 }
 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum RandomnessSource {
+    OperatingSystem,
+    Injected,
+}
+
+#[derive(Clone, Debug, Eq, PartialEq, Serialize, Deserialize)]
 #[serde(tag = "method", rename_all = "snake_case", deny_unknown_fields)]
 pub enum DrawProvenance {
-    Manual { recorded_at: UtcInstant },
+    Manual {
+        recorded_at: UtcInstant,
+    },
+    SoftwareShuffle {
+        algorithm: StableId,
+        algorithm_version: NonZeroU32,
+        randomness_source: RandomnessSource,
+        draw_manifest_id: Sha256Id,
+        enabled_card_count: NonZeroU32,
+        reversal_policy: ReversalPolicy,
+        shuffled_at: UtcInstant,
+        seed_commitment: Option<Sha256Id>,
+    },
 }
 
 impl DrawProvenance {
-    pub const fn recorded_at(self) -> UtcInstant {
+    pub const fn timestamp(&self) -> UtcInstant {
         match self {
-            Self::Manual { recorded_at } => recorded_at,
+            Self::Manual { recorded_at } => *recorded_at,
+            Self::SoftwareShuffle { shuffled_at, .. } => *shuffled_at,
         }
     }
 }
@@ -228,7 +248,7 @@ struct TarotReadingRef<'a> {
     question: &'a Option<String>,
     context: &'a Option<String>,
     placements: &'a [Placement],
-    draw_provenance: DrawProvenance,
+    draw_provenance: &'a DrawProvenance,
     reader_notes: &'a Option<String>,
     interpretation: &'a Option<String>,
     follow_ups: &'a [FollowUp],
@@ -290,7 +310,8 @@ impl TarotReading {
         validate_optional_text("reading.context", context.as_deref())?;
         validate_optional_text("reading.reader_notes", reader_notes.as_deref())?;
         validate_optional_text("reading.interpretation", interpretation.as_deref())?;
-        validate_timeline(created_at, modified_at, draw_provenance, &follow_ups)?;
+        validate_provenance(&deck, &draw_provenance)?;
+        validate_timeline(created_at, modified_at, &draw_provenance, &follow_ups)?;
         validate_follow_ups(&follow_ups)?;
         validate_placements(&deck, &spread, &placements)?;
         Ok(Self {
@@ -343,8 +364,8 @@ impl TarotReading {
     pub fn placements(&self) -> &[Placement] {
         &self.placements
     }
-    pub const fn draw_provenance(&self) -> DrawProvenance {
-        self.draw_provenance
+    pub const fn draw_provenance(&self) -> &DrawProvenance {
+        &self.draw_provenance
     }
     pub fn reader_notes(&self) -> Option<&str> {
         self.reader_notes.as_deref()
@@ -392,7 +413,7 @@ impl TarotReading {
         validate_timeline(
             self.created_at,
             modified_at,
-            self.draw_provenance,
+            &self.draw_provenance,
             &self.follow_ups,
         )?;
         validate_placements(&self.deck, &self.spread, &placements)?;
@@ -455,7 +476,7 @@ impl Serialize for TarotReading {
             question: &self.question,
             context: &self.context,
             placements: &self.placements,
-            draw_provenance: self.draw_provenance,
+            draw_provenance: &self.draw_provenance,
             reader_notes: &self.reader_notes,
             interpretation: &self.interpretation,
             follow_ups: &self.follow_ups,
@@ -582,7 +603,7 @@ fn validate_follow_ups(follow_ups: &[FollowUp]) -> Result<(), ValidationError> {
 fn validate_timeline(
     created_at: UtcInstant,
     modified_at: UtcInstant,
-    draw_provenance: DrawProvenance,
+    draw_provenance: &DrawProvenance,
     follow_ups: &[FollowUp],
 ) -> Result<(), ValidationError> {
     if modified_at < created_at {
@@ -590,9 +611,9 @@ fn validate_timeline(
             field: "modified_at",
         });
     }
-    if draw_provenance.recorded_at() < created_at || draw_provenance.recorded_at() > modified_at {
+    if draw_provenance.timestamp() < created_at || draw_provenance.timestamp() > modified_at {
         return Err(ValidationError::InvalidTimestampOrder {
-            field: "draw_provenance.recorded_at",
+            field: "draw_provenance.timestamp",
         });
     }
     if follow_ups.iter().any(|follow_up| {
@@ -601,6 +622,34 @@ fn validate_timeline(
         return Err(ValidationError::InvalidTimestampOrder {
             field: "follow_up.created_at",
         });
+    }
+    Ok(())
+}
+
+fn validate_provenance(
+    deck: &DeckManifest,
+    draw_provenance: &DrawProvenance,
+) -> Result<(), ValidationError> {
+    let DrawProvenance::SoftwareShuffle {
+        draw_manifest_id,
+        enabled_card_count,
+        reversal_policy,
+        ..
+    } = draw_provenance
+    else {
+        return Ok(());
+    };
+    let expected_id = deck
+        .draw_manifest_id()
+        .expect("validated deck manifests always serialize");
+    if draw_manifest_id.as_str() != expected_id {
+        return Err(ValidationError::ProvenanceManifestMismatch);
+    }
+    if enabled_card_count.get() as usize != deck.enabled_cards().count() {
+        return Err(ValidationError::ProvenanceCardCountMismatch);
+    }
+    if reversal_policy != &deck.reversal_policy() {
+        return Err(ValidationError::ProvenanceReversalMismatch);
     }
     Ok(())
 }

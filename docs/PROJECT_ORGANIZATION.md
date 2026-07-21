@@ -1,6 +1,6 @@
 # Project organization
 
-Status: Phase 2 spreads and manual readings complete
+Status: Phase 3 secure software draws complete
 Last reviewed: 2026-07-21
 
 ## Mission
@@ -116,3 +116,18 @@ encrypted journal.
   references remain opaque strings owned by the calling application.
 - Reopened readings can revise placements and text or append timestamped
   annotations and outcomes without bypassing snapshot or timeline validation.
+
+## Phase 3 decisions
+
+- `sibylla-shuffle::shuffle` is the production entrypoint and always obtains
+  randomness from the operating system through `getrandom`.
+- Fisher-Yates algorithm version 1 uses rejection-sampled little-endian `u64`
+  values; simple biased modulo sampling is never used.
+- Reversal sampling happens after card order and independently for each card.
+  Zero and 10,000 basis-point policies require no reversal entropy.
+- Injected sources are explicit and recorded as `injected`; they
+  exist for tests and replays and are never selected by the default API.
+- Software provenance records algorithm/version, randomness category,
+  draw-manifest ID, enabled count, reversal policy, timestamp, and optional
+  seed commitment. Reading validation cross-checks the population fields against
+  the embedded deck snapshot.
