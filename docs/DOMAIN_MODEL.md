@@ -1,6 +1,6 @@
-# Domain model proposal
+# Domain model
 
-Status: design input for schema v1; names and field shapes are not yet stable
+Status: Phase 1 identity and deck-manifest schema implemented
 
 ## Design principles
 
@@ -19,11 +19,9 @@ Status: design input for schema v1; names and field shapes are not yet stable
 
 ```text
 CardIdentity
-- identity ID (stable, normalized, and optionally namespaced)
-- taxonomy: conventional tarot | extension
-- conventional classification, when applicable:
-  - major: conventional number/identifier
-  - minor: conventional suit and rank
+- conventional: semantic stable ID with major or minor classification
+- extension: explicit namespace and extension-local stable ID
+- conventional majors have no universal number; numbering is deck-specific
 
 DeckManifest
 - manifest ID and manifest schema version
@@ -31,7 +29,7 @@ DeckManifest
 - system or tradition as descriptive metadata, not behavior
 - ordered DeckCard entries
 - enabled-card set
-- reversal policy/default
+- reversal-rate default in basis points (0 through 10,000)
 - rights metadata; artwork references are optional and external
 
 DeckCard
@@ -47,10 +45,17 @@ DeckCard
 IDs, not mandatory printed names. Nonconventional cards use an explicit
 extension identity rather than being forced into a false conventional mapping.
 
-Manifest validation rejects duplicate deck-card IDs and canonical identities,
-invalid enabled references, an empty enabled deck, and ambiguous mappings.
-Manifest hashing uses a canonical, versioned representation and covers the
-exact enabled card population relevant to a draw.
+Manifest validation rejects duplicate deck-card IDs, an empty card list, an
+entirely disabled deck, blank supplied metadata, and duplicate correspondence
+keys. Canonical identity duplicates are deliberately allowed when distinct
+physical deck-card IDs identify variants.
+
+Schema-v1 manifests use strict JSON and reject unknown fields. The full content
+ID hashes canonical compact JSON for every field. The draw-manifest ID hashes a
+separate versioned projection containing the manifest ID, reversal rate, and
+ordered enabled cards with their deck-card and canonical identities. Notes,
+attribution, rights, disabled cards, and asset references do not affect the
+draw-manifest ID.
 
 ## Spreads and placements
 

@@ -16,12 +16,15 @@ spread or perform an operating-system-random secure shuffle, preserve card
 orientation and position, serialize the complete reading, close the process,
 and recover the same validated reading offline.
 
-See [project organization](docs/PROJECT_ORGANIZATION.md), the proposed
+See [project organization](docs/PROJECT_ORGANIZATION.md), the
 [domain model](docs/DOMAIN_MODEL.md), and the staged [milestones](docs/MILESTONES.md).
 
 ## Status
 
-Phase 0 repository baseline. No tarot schema is stable yet.
+Phase 1 identities and deck manifests. `sibylla-core` provides the conventional
+78-card taxonomy, extensible identities, strict artwork-free manifest JSON, and
+versioned content hashes. Spread, reading, and shuffle schemas are not yet
+stable.
 
 ## License
 

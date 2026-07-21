@@ -5,6 +5,13 @@
 
 mod error;
 mod id;
+mod identity;
+mod manifest;
 
 pub use error::ValidationError;
 pub use id::StableId;
+pub use identity::{Arcana, CardIdentity, ConventionalCard, MajorArcana, MinorRank, MinorSuit};
+pub use manifest::{
+    Attribution, Correspondence, DRAW_MANIFEST_SCHEMA_VERSION, DeckCard, DeckManifest,
+    MANIFEST_SCHEMA_VERSION, ManifestError, ReversalPolicy, RightsMetadata,
+};

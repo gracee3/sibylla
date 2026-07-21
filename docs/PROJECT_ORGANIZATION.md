@@ -1,6 +1,6 @@
 # Project organization
 
-Status: Phase 0 repository baseline complete
+Status: Phase 1 identities and deck manifests complete
 Last reviewed: 2026-07-21
 
 ## Mission
@@ -90,3 +90,14 @@ encrypted journal.
    independently useful; practitioner-only memory remains in Oracle Studio.
 3. Schema v1 supports an extensible namespaced card identity with a validated
    conventional taxonomy profile.
+
+## Phase 1 decisions
+
+- Major Arcana identities are semantic. Printed numbers are deck-local metadata
+  so decks may number Strength, Justice, or any other card differently.
+- Deck-card IDs identify physical cards. Multiple physical cards may map to one
+  canonical identity, supporting alternate variants within a deck.
+- A reversal default is an exact rate in basis points from 0 through 10,000.
+- The complete manifest content ID covers all serialized metadata. A separate
+  draw-manifest ID covers only the ordered enabled population, its canonical
+  mappings, the manifest ID, and the reversal rate.

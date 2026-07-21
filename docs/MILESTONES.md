@@ -16,6 +16,8 @@ Exit: a clean clone builds, tests, lints, and documents with locked dependencies
 
 ## Phase 1: identities and deck manifests
 
+Status: complete on 2026-07-21.
+
 - Implement extensible card identities and the conventional tarot profile.
 - Implement deck/card manifests, enabled-card selection, reversal policy, and
   deterministic manifest hashing.

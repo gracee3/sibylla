@@ -1,0 +1,1189 @@
+{
+  "schema_version": 1,
+  "id": "sibylla_conventional_78",
+  "name": "Sibylla Conventional 78",
+  "attribution": {
+    "author": "Sibylla contributors",
+    "artist": null,
+    "publisher": null
+  },
+  "tradition": "Conventional tarot taxonomy profile",
+  "rights": {
+    "license": "AGPL-3.0-or-later",
+    "source": "https://github.com/gracee3/sibylla",
+    "notes": "Original metadata-only fixture containing no artwork or guidebook text."
+  },
+  "reversal_rate_basis_points": 5000,
+  "cards": [
+    {
+      "id": "chariot",
+      "identity": {
+        "kind": "conventional",
+        "id": "chariot"
+      },
+      "printed_title": "The Chariot",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "death",
+      "identity": {
+        "kind": "conventional",
+        "id": "death"
+      },
+      "printed_title": "Death",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "devil",
+      "identity": {
+        "kind": "conventional",
+        "id": "devil"
+      },
+      "printed_title": "The Devil",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "emperor",
+      "identity": {
+        "kind": "conventional",
+        "id": "emperor"
+      },
+      "printed_title": "The Emperor",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "empress",
+      "identity": {
+        "kind": "conventional",
+        "id": "empress"
+      },
+      "printed_title": "The Empress",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "fool",
+      "identity": {
+        "kind": "conventional",
+        "id": "fool"
+      },
+      "printed_title": "The Fool",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "hanged_man",
+      "identity": {
+        "kind": "conventional",
+        "id": "hanged_man"
+      },
+      "printed_title": "The Hanged Man",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "hermit",
+      "identity": {
+        "kind": "conventional",
+        "id": "hermit"
+      },
+      "printed_title": "The Hermit",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "hierophant",
+      "identity": {
+        "kind": "conventional",
+        "id": "hierophant"
+      },
+      "printed_title": "The Hierophant",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "high_priestess",
+      "identity": {
+        "kind": "conventional",
+        "id": "high_priestess"
+      },
+      "printed_title": "The High Priestess",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "judgement",
+      "identity": {
+        "kind": "conventional",
+        "id": "judgement"
+      },
+      "printed_title": "Judgement",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "justice",
+      "identity": {
+        "kind": "conventional",
+        "id": "justice"
+      },
+      "printed_title": "Justice",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "lovers",
+      "identity": {
+        "kind": "conventional",
+        "id": "lovers"
+      },
+      "printed_title": "The Lovers",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "magician",
+      "identity": {
+        "kind": "conventional",
+        "id": "magician"
+      },
+      "printed_title": "The Magician",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "moon",
+      "identity": {
+        "kind": "conventional",
+        "id": "moon"
+      },
+      "printed_title": "The Moon",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "star",
+      "identity": {
+        "kind": "conventional",
+        "id": "star"
+      },
+      "printed_title": "The Star",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "strength",
+      "identity": {
+        "kind": "conventional",
+        "id": "strength"
+      },
+      "printed_title": "Strength",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "sun",
+      "identity": {
+        "kind": "conventional",
+        "id": "sun"
+      },
+      "printed_title": "The Sun",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "temperance",
+      "identity": {
+        "kind": "conventional",
+        "id": "temperance"
+      },
+      "printed_title": "Temperance",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "tower",
+      "identity": {
+        "kind": "conventional",
+        "id": "tower"
+      },
+      "printed_title": "The Tower",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "wheel_of_fortune",
+      "identity": {
+        "kind": "conventional",
+        "id": "wheel_of_fortune"
+      },
+      "printed_title": "Wheel of Fortune",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "world",
+      "identity": {
+        "kind": "conventional",
+        "id": "world"
+      },
+      "printed_title": "The World",
+      "printed_number": null,
+      "printed_suit": null,
+      "printed_rank": null,
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ace_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "ace_of_wands"
+      },
+      "printed_title": "Ace of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Ace",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "two_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "two_of_wands"
+      },
+      "printed_title": "Two of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Two",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "three_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "three_of_wands"
+      },
+      "printed_title": "Three of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Three",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "four_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "four_of_wands"
+      },
+      "printed_title": "Four of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Four",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "five_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "five_of_wands"
+      },
+      "printed_title": "Five of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Five",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "six_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "six_of_wands"
+      },
+      "printed_title": "Six of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Six",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "seven_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "seven_of_wands"
+      },
+      "printed_title": "Seven of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Seven",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "eight_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "eight_of_wands"
+      },
+      "printed_title": "Eight of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Eight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "nine_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "nine_of_wands"
+      },
+      "printed_title": "Nine of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Nine",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ten_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "ten_of_wands"
+      },
+      "printed_title": "Ten of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Ten",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "page_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "page_of_wands"
+      },
+      "printed_title": "Page of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Page",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "knight_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "knight_of_wands"
+      },
+      "printed_title": "Knight of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Knight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "queen_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "queen_of_wands"
+      },
+      "printed_title": "Queen of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "Queen",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "king_of_wands",
+      "identity": {
+        "kind": "conventional",
+        "id": "king_of_wands"
+      },
+      "printed_title": "King of Wands",
+      "printed_number": null,
+      "printed_suit": "Wands",
+      "printed_rank": "King",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ace_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "ace_of_cups"
+      },
+      "printed_title": "Ace of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Ace",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "two_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "two_of_cups"
+      },
+      "printed_title": "Two of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Two",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "three_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "three_of_cups"
+      },
+      "printed_title": "Three of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Three",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "four_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "four_of_cups"
+      },
+      "printed_title": "Four of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Four",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "five_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "five_of_cups"
+      },
+      "printed_title": "Five of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Five",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "six_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "six_of_cups"
+      },
+      "printed_title": "Six of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Six",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "seven_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "seven_of_cups"
+      },
+      "printed_title": "Seven of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Seven",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "eight_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "eight_of_cups"
+      },
+      "printed_title": "Eight of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Eight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "nine_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "nine_of_cups"
+      },
+      "printed_title": "Nine of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Nine",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ten_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "ten_of_cups"
+      },
+      "printed_title": "Ten of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Ten",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "page_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "page_of_cups"
+      },
+      "printed_title": "Page of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Page",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "knight_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "knight_of_cups"
+      },
+      "printed_title": "Knight of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Knight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "queen_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "queen_of_cups"
+      },
+      "printed_title": "Queen of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "Queen",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "king_of_cups",
+      "identity": {
+        "kind": "conventional",
+        "id": "king_of_cups"
+      },
+      "printed_title": "King of Cups",
+      "printed_number": null,
+      "printed_suit": "Cups",
+      "printed_rank": "King",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ace_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "ace_of_swords"
+      },
+      "printed_title": "Ace of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Ace",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "two_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "two_of_swords"
+      },
+      "printed_title": "Two of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Two",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "three_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "three_of_swords"
+      },
+      "printed_title": "Three of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Three",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "four_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "four_of_swords"
+      },
+      "printed_title": "Four of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Four",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "five_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "five_of_swords"
+      },
+      "printed_title": "Five of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Five",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "six_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "six_of_swords"
+      },
+      "printed_title": "Six of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Six",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "seven_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "seven_of_swords"
+      },
+      "printed_title": "Seven of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Seven",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "eight_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "eight_of_swords"
+      },
+      "printed_title": "Eight of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Eight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "nine_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "nine_of_swords"
+      },
+      "printed_title": "Nine of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Nine",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ten_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "ten_of_swords"
+      },
+      "printed_title": "Ten of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Ten",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "page_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "page_of_swords"
+      },
+      "printed_title": "Page of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Page",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "knight_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "knight_of_swords"
+      },
+      "printed_title": "Knight of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Knight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "queen_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "queen_of_swords"
+      },
+      "printed_title": "Queen of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "Queen",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "king_of_swords",
+      "identity": {
+        "kind": "conventional",
+        "id": "king_of_swords"
+      },
+      "printed_title": "King of Swords",
+      "printed_number": null,
+      "printed_suit": "Swords",
+      "printed_rank": "King",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ace_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "ace_of_pentacles"
+      },
+      "printed_title": "Ace of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Ace",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "two_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "two_of_pentacles"
+      },
+      "printed_title": "Two of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Two",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "three_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "three_of_pentacles"
+      },
+      "printed_title": "Three of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Three",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "four_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "four_of_pentacles"
+      },
+      "printed_title": "Four of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Four",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "five_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "five_of_pentacles"
+      },
+      "printed_title": "Five of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Five",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "six_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "six_of_pentacles"
+      },
+      "printed_title": "Six of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Six",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "seven_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "seven_of_pentacles"
+      },
+      "printed_title": "Seven of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Seven",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "eight_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "eight_of_pentacles"
+      },
+      "printed_title": "Eight of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Eight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "nine_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "nine_of_pentacles"
+      },
+      "printed_title": "Nine of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Nine",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "ten_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "ten_of_pentacles"
+      },
+      "printed_title": "Ten of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Ten",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "page_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "page_of_pentacles"
+      },
+      "printed_title": "Page of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Page",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "knight_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "knight_of_pentacles"
+      },
+      "printed_title": "Knight of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Knight",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "queen_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "queen_of_pentacles"
+      },
+      "printed_title": "Queen of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "Queen",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    },
+    {
+      "id": "king_of_pentacles",
+      "identity": {
+        "kind": "conventional",
+        "id": "king_of_pentacles"
+      },
+      "printed_title": "King of Pentacles",
+      "printed_number": null,
+      "printed_suit": "Pentacles",
+      "printed_rank": "King",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    }
+  ]
+}

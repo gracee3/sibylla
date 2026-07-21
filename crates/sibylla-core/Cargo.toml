@@ -9,7 +9,6 @@ description = "Validated deck-independent tarot domain contracts for Sibylla"
 
 [dependencies]
 serde.workspace = true
-thiserror.workspace = true
-
-[dev-dependencies]
 serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
