@@ -57,6 +57,8 @@ tests, and never default to deterministic entropy in production.
 
 ## Phase 4: stable artifacts and consumer hand-off
 
+Status: complete on 2026-07-21.
+
 - Add `sibylla-artifacts` and finalize canonical deck and reading envelopes and
   content IDs.
 - Document compatibility and migration policy.

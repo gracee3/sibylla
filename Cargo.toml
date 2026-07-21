@@ -1,5 +1,9 @@
 [workspace]
-members = ["crates/sibylla-core", "crates/sibylla-shuffle"]
+members = [
+    "crates/sibylla-artifacts",
+    "crates/sibylla-core",
+    "crates/sibylla-shuffle",
+]
 resolver = "3"
 
 [workspace.package]

@@ -21,12 +21,15 @@ See [project organization](docs/PROJECT_ORGANIZATION.md), the
 
 ## Status
 
-Phase 3 secure software draws. `sibylla-core` provides identities, manifests,
+Phase 4 stable consumer hand-off. `sibylla-core` provides identities, manifests,
 spreads, manual readings, and typed shuffle provenance. `sibylla-shuffle`
 provides versioned unbiased Fisher-Yates, operating-system entropy by default,
 independent reversals, deterministic test injection, and seed commitments.
+`sibylla-artifacts` provides strict versioned deck and reading envelopes,
+canonical JSON, and SHA-256 content IDs for independent offline consumers.
 
-See the frozen [shuffle v1 contract](docs/SHUFFLE.md).
+See the frozen [shuffle v1 contract](docs/SHUFFLE.md) and
+[artifact v1 contract](docs/ARTIFACTS.md).
 
 ## License
 

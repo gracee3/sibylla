@@ -1,6 +1,6 @@
 # Project organization
 
-Status: Phase 3 secure software draws complete
+Status: Phase 4 stable artifact hand-off complete
 Last reviewed: 2026-07-21
 
 ## Mission
@@ -43,9 +43,8 @@ docs/
 fixtures/             original metadata-only fixtures with provenance
 ```
 
-Begin with `sibylla-core`. Split shuffle and artifact crates only when their
-public contracts are understood; avoiding premature crates is preferable to
-moving unstable types between them.
+The three crates now reflect the frozen first-milestone boundaries: domain
+validation, entropy-backed drawing, and stable interchange artifacts.
 
 ## Ownership decisions
 
@@ -131,3 +130,17 @@ encrypted journal.
   draw-manifest ID, enabled count, reversal policy, timestamp, and optional
   seed commitment. Reading validation cross-checks the population fields against
   the embedded deck snapshot.
+
+## Phase 4 decisions
+
+- `sibylla-artifacts` wraps validated deck and reading payloads in strict
+  envelope schema version 1 without taking ownership of persistence or
+  encryption.
+- Artifact IDs hash the exact compact canonical envelope, including the
+  envelope discriminator and every nested payload field.
+- Pretty JSON is a presentation form. It must be reparsed and canonically
+  serialized before calculating or verifying an ID.
+- Envelope and nested schema versions are independent and both fail explicitly
+  when unsupported. Version 1 never ignores unknown fields or silently migrates.
+- Golden digests freeze deck and reading serialization, and a public-API-only
+  contract test represents an independent Oracle Studio consumer.

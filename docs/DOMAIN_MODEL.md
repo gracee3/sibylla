@@ -1,6 +1,6 @@
 # Domain model
 
-Status: Phase 3 secure software-shuffle contract implemented
+Status: Phase 4 stable artifact contract implemented
 
 ## Design principles
 
@@ -124,8 +124,16 @@ UTC but are never synthesized during deserialization. Revisions revalidate all
 placements and cannot move the modified timestamp backward.
 
 Reading schema v1 uses strict JSON and rejects unknown fields throughout the
-nested deck, spread, placement, provenance, and follow-up records. Stable
-reading content IDs are deferred to the artifact checkpoint.
+nested deck, spread, placement, provenance, and follow-up records.
+
+## Artifact envelope
+
+Deck manifests and readings cross application boundaries through envelope
+schema v1. The envelope identifies its payload as `deck` or `reading`, retains
+the payload's independently versioned schema, and rejects unknown or duplicate
+fields. Its content ID hashes the exact canonical compact JSON envelope, so it
+identifies both the domain snapshot and its interchange contract. See
+[the artifact contract](ARTIFACTS.md) for canonicalization and migration rules.
 
 ## Draw provenance
 

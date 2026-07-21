@@ -190,6 +190,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "sibylla-artifacts"
+version = "0.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "sha2",
+ "sibylla-core",
+ "thiserror",
+]
+
+[[package]]
 name = "sibylla-core"
 version = "0.1.0"
 dependencies = [
