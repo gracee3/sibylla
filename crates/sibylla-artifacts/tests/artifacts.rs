@@ -112,6 +112,17 @@ fn envelope_versions_and_unknown_fields_fail_explicitly() {
 }
 
 #[test]
+fn nested_payload_future_versions_fail_before_consumer_use() {
+    let mut value: serde_json::Value =
+        serde_json::from_str(&deck_artifact().to_json().unwrap()).unwrap();
+    value["payload"]["schema_version"] = 2.into();
+    assert!(matches!(
+        Artifact::from_json(&serde_json::to_string(&value).unwrap()),
+        Err(ArtifactError::Json(_))
+    ));
+}
+
+#[test]
 fn nested_domain_validation_cannot_be_bypassed() {
     let mut value: serde_json::Value =
         serde_json::from_str(&reading_artifact().to_json().unwrap()).unwrap();

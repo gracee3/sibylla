@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "id": "freeform_three",
+  "name": "Freeform Three",
+  "layout": "freeform",
+  "positions": [
+    {"id": "center", "label": "Center", "meaning": "Focal point", "layout_hint": {"x": 0.0, "y": 0.0}},
+    {"id": "above", "label": "Above", "meaning": "Emerging influence", "layout_hint": {"x": 0.0, "y": -1.0}},
+    {"id": "crossing", "label": "Crossing", "meaning": null, "layout_hint": {"x": 1.0, "y": 0.0}}
+  ]
+}

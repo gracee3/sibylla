@@ -5,6 +5,8 @@ use sibylla_core::{
 
 const FIXTURE: &str = include_str!("../../../fixtures/decks/conventional-78-v1.json");
 const EXTENSION_FIXTURE: &str = include_str!("../../../fixtures/decks/extension-tradition-v1.json");
+const EXTENSION_GOLDEN_ID: &str =
+    include_str!("../../../fixtures/decks/extension-tradition-v1.sha256");
 
 fn id(field: &'static str, value: &str) -> StableId {
     StableId::new(field, value).unwrap()
@@ -85,6 +87,7 @@ fn extension_tradition_fixture_preserves_non_rws_metadata() {
         manifest.cards()[1].identity(),
         CardIdentity::Extension { id, .. } if id.as_str() == "echo"
     ));
+    assert_eq!(manifest.content_id().unwrap(), EXTENSION_GOLDEN_ID.trim());
     assert_eq!(
         DeckManifest::from_json(&manifest.to_pretty_json().unwrap()).unwrap(),
         manifest

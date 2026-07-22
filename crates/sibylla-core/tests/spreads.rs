@@ -121,3 +121,17 @@ fn spread_json_round_trip_preserves_order_meaning_and_layout() {
     assert_eq!(decoded.positions()[0].meaning(), Some("The focal point"));
     assert_eq!(decoded.positions()[0].layout_hint().unwrap().x(), 0.25);
 }
+
+#[test]
+fn freeform_fixture_is_a_stable_consumer_contract() {
+    let fixture = include_str!("../../../fixtures/spreads/freeform-three-v1.json");
+    let spread = SpreadDefinition::from_json(fixture).unwrap();
+    assert_eq!(spread.layout(), SpreadLayout::Freeform);
+    assert_eq!(spread.positions().len(), 3);
+    assert_eq!(spread.positions()[1].meaning(), Some("Emerging influence"));
+    assert_eq!(spread.positions()[2].layout_hint().unwrap().x(), 1.0);
+    assert_eq!(
+        SpreadDefinition::from_json(&spread.to_pretty_json().unwrap()).unwrap(),
+        spread
+    );
+}
