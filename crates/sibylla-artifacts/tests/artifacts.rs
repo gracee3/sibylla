@@ -1,7 +1,7 @@
 use sibylla_artifacts::{
     ARTIFACT_SCHEMA_VERSION, Artifact, ArtifactError, ArtifactKind, DeckArtifact, ReadingArtifact,
 };
-use sibylla_core::{DeckManifest, TarotReading};
+use sibylla_core::{DeckManifest, TarotReading, UtcInstant};
 
 const DECK_FIXTURE: &str = include_str!("../../../fixtures/decks/conventional-78-v1.json");
 const READING_FIXTURE: &str = include_str!("../../../fixtures/readings/manual-three-card-v1.json");
@@ -130,6 +130,29 @@ fn payload_changes_change_the_content_id() {
     let changed = DeckArtifact::new(
         DeckManifest::from_json(&serde_json::to_string(&value).unwrap()).unwrap(),
     );
+
+    assert_ne!(
+        original.content_id().unwrap(),
+        changed.content_id().unwrap()
+    );
+}
+
+#[test]
+fn reading_revisions_change_the_artifact_content_id() {
+    let original = reading_artifact();
+    let mut reading = original.clone().into_payload();
+    let modified_at = UtcInstant::parse_rfc3339("2026-07-23T14:00:00Z").unwrap();
+    reading
+        .revise(
+            Some("A revised fictional question?".into()),
+            reading.context().map(str::to_owned),
+            reading.placements().to_vec(),
+            reading.reader_notes().map(str::to_owned),
+            reading.interpretation().map(str::to_owned),
+            modified_at,
+        )
+        .unwrap();
+    let changed = ReadingArtifact::new(reading);
 
     assert_ne!(
         original.content_id().unwrap(),

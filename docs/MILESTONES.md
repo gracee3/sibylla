@@ -83,7 +83,23 @@ and Sibylla expose usable contracts.
 Exit: a user can complete and recover the full encrypted physical-reading
 workflow locally, with secure software draws available as an alternative.
 
+## Phase 6: compatibility hardening
+
+This is the next Sibylla engine milestone after the stable artifact contract.
+
+- Check in canonical deck and reading fixtures with expected content IDs.
+- Add revision and follow-up content-ID fixtures.
+- Add explicit unsupported-version and migration tests for every serialized
+  boundary.
+- Expand consumer contract tests for alternate deck traditions and freeform
+  spreads.
+
+Exit: a consumer can pin fixtures and detect serialization or semantic changes
+before upgrading Sibylla.
+
 ## Later, separate checkpoints
+
+## Deferred application features
 
 - local deck-specific card recognition with encrypted reference images and user
   confirmation;
