@@ -4,6 +4,7 @@ use sibylla_core::{
 };
 
 const FIXTURE: &str = include_str!("../../../fixtures/decks/conventional-78-v1.json");
+const EXTENSION_FIXTURE: &str = include_str!("../../../fixtures/decks/extension-tradition-v1.json");
 
 fn id(field: &'static str, value: &str) -> StableId {
     StableId::new(field, value).unwrap()
@@ -66,6 +67,27 @@ fn conventional_fixture_round_trips_without_loss() {
     assert_eq!(
         serde_json::from_str::<DeckManifest>(&deck.to_pretty_json().unwrap()).unwrap(),
         deck
+    );
+}
+
+#[test]
+fn extension_tradition_fixture_preserves_non_rws_metadata() {
+    let manifest = DeckManifest::from_json(EXTENSION_FIXTURE).unwrap();
+    assert_eq!(manifest.cards().len(), 2);
+    assert_eq!(manifest.cards()[0].printed_number(), Some("A"));
+    assert_eq!(manifest.cards()[0].printed_suit(), Some("Gates"));
+    assert!(matches!(
+        manifest.cards()[0].identity(),
+        CardIdentity::Extension { namespace, id }
+            if namespace.as_str() == "org_example_threshold" && id.as_str() == "gate"
+    ));
+    assert!(matches!(
+        manifest.cards()[1].identity(),
+        CardIdentity::Extension { id, .. } if id.as_str() == "echo"
+    ));
+    assert_eq!(
+        DeckManifest::from_json(&manifest.to_pretty_json().unwrap()).unwrap(),
+        manifest
     );
 }
 

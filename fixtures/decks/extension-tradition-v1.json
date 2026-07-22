@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "fictional_extension_tradition",
+  "name": "Fictional Threshold Cards",
+  "attribution": {"author": "Sibylla contributors", "artist": null, "publisher": null},
+  "tradition": "Original non-RWS extension fixture",
+  "rights": {"license": "AGPL-3.0-or-later", "source": null, "notes": "Metadata only; no artwork."},
+  "reversal_rate_basis_points": 2500,
+  "cards": [
+    {
+      "id": "threshold_gate",
+      "identity": {"kind": "extension", "namespace": "org_example_threshold", "id": "gate"},
+      "printed_title": "Gate of Thresholds",
+      "printed_number": "A",
+      "printed_suit": "Gates",
+      "printed_rank": "Gate",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": "Fictional extension identity."
+    },
+    {
+      "id": "threshold_echo",
+      "identity": {"kind": "extension", "namespace": "org_example_threshold", "id": "echo"},
+      "printed_title": "Echo of Thresholds",
+      "printed_number": "B",
+      "printed_suit": "Echoes",
+      "printed_rank": "Echo",
+      "enabled": true,
+      "asset_id": null,
+      "correspondences": [],
+      "notes": null
+    }
+  ]
+}
