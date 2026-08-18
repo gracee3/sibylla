@@ -1,5 +1,7 @@
 # Sibylla
 
+**Status:** Active pre-1.0 research software. The version-1 shuffle and artifact contracts described below are frozen; other interfaces may evolve.
+
 Sibylla is a local-first-friendly Rust tarot domain engine. It models cards,
 deck manifests, spreads, placements, readings, and auditable secure draws
 without bundling copyrighted deck material.
